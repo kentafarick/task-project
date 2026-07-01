@@ -1,0 +1,56 @@
+.burger {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    cursor: pointer;
+
+    &:hover {
+        .icon {
+            span:nth-child(1) {
+                transform: translateY(-4px);
+            }
+
+            span:nth-child(2) {
+                transform: translateY(0);
+            }
+
+            span:nth-child(3) {
+                transform: translateY(4px);
+            }
+        }
+    }
+}
+
+.icon {
+    width: 38px;
+    height: 17px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    span {
+        display: block;
+        height: 2px;
+        background: #2F80ED;
+        transition: transform 0.3s ease;
+    }
+
+    span:nth-child(1) {
+        width: 38px;
+    }
+
+    span:nth-child(2) {
+        width: 38px;
+    }
+
+    span:nth-child(3) {
+        width: 38px;
+    }
+}
+
+.text {
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+}

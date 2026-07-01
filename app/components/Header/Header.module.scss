@@ -1,0 +1,35 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #ffffff;
+    z-index: 1000;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+}
+
+.left,
+.right {
+    display: flex;
+    align-items: center;
+}
+
+.left {
+    gap: 40px;
+}
+
+.right {
+    gap: 36px;
+}
+
+.center {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}

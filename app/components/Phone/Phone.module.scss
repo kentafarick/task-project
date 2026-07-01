@@ -1,0 +1,11 @@
+.phone {
+    font-size: 14px;
+    color: #111;
+    text-decoration: none;
+
+    transition: .3s;
+
+    &:hover {
+        opacity: .6;
+    }
+}
