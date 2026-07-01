@@ -1,42 +1,24 @@
-import Image from "next/image";
 import Container from "../Container/Container";
+
+import HeroBanner from "./HeroBanner/HeroBanner";
+import HeroContent from "./HeroContent/HeroContent";
+import HeroLink from "./HeroLink/HeroLink";
+
 import styles from "./Hero.module.scss";
 
 export default function Hero() {
     return (
         <section className={styles.hero}>
             <Container>
-
-                <div className={styles.imageWrapper}>
-                    <Image
-                        src="/images/hero.jpg"
-                        alt="INCHAPIN"
-                        fill
-                        priority
-                        className={styles.image}
-                    />
-                </div>
+                <HeroBanner />
 
                 <div className={styles.content}>
-
-                    <div className={styles.left}>
-                        <p>
-                            Дом бизнес-класса
-                            <br />
-                            для ценителей роскоши
-                        </p>
-                    </div>
-
-                    <div className={styles.right}>
-                        <h1>INCHAPIN</h1>
-                    </div>
-
+                    <HeroContent />
                 </div>
 
-                <button className={styles.about}>
-                    О ПРОЕКТЕ
-                </button>
-
+                <div className={styles.link}>
+                    <HeroLink />
+                </div>
             </Container>
         </section>
     );
