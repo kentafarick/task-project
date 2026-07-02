@@ -11,6 +11,10 @@ export default function HeroContent() {
                 для ценителей роскоши
             </p>
 
+            <p className={styles.projectLabel}>
+                О ПРОЕКТЕ
+            </p>
+
             <Image
                 src="/icons/biglogo.svg"
                 alt="INCHAPIN"

@@ -1,0 +1,35 @@
+.content {
+    width: 587px;
+}
+
+.title {
+    width: max-content;
+    height: 192px;
+    margin: 0 0 120px;
+    font-size: 34px;
+    font-weight: 400;
+    line-height: 140%;
+    letter-spacing: 0;
+    text-transform: uppercase;
+    color: #111111;
+
+    span {
+        color: #2F80ED;
+    }
+}
+
+.text {
+    width: 587px;
+    height: 96px;
+    margin: 0;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 160%;
+    letter-spacing: 0;
+    text-transform: uppercase;
+    color: #111111;
+
+    span {
+        color: #2F80ED;
+    }
+}
