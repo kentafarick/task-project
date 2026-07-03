@@ -1,4 +1,5 @@
 .content {
+    position: relative;
     width: 587px;
 }
 
@@ -32,4 +33,12 @@
     span {
         color: #2F80ED;
     }
+}
+
+.vector {
+    position: absolute;
+    left: 0;
+    top: -64px;
+    width: 40px;
+    height: 6px;
 }

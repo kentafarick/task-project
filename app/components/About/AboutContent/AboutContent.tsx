@@ -1,8 +1,17 @@
+import Image from "next/image";
 import styles from "./AboutContent.module.scss";
 
 export default function AboutContent() {
     return (
         <div className={styles.content}>
+            <Image
+                src="/images/vector.png"
+                alt=""
+                width={40}
+                height={6}
+                className={styles.vector}
+            />
+
             <h2 className={styles.title}>
                 УЮТНОЕ И БЕЗОПАСНОЕ
                 <br />

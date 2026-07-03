@@ -1,8 +1,8 @@
 import styles from "./CallbackButton.module.scss";
 
-interface CallbackButtonProps {
-    onClick?: () => void;
-}
+type CallbackButtonProps = {
+    onClick: () => void;
+};
 
 export default function CallbackButton({ onClick }: CallbackButtonProps) {
     return (
@@ -11,7 +11,12 @@ export default function CallbackButton({ onClick }: CallbackButtonProps) {
             className={styles.button}
             onClick={onClick}
         >
-            Заказать звонок
+            <span className={styles.textWrapper}>
+                <span className={styles.text}>
+                    <span>Заказать звонок</span>
+                    <span>Заказать звонок</span>
+                </span>
+            </span>
         </button>
     );
 }

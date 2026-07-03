@@ -6,7 +6,6 @@
     padding: 0;
     border: none;
     background: transparent;
-    cursor: pointer;
 }
 
 .info {
@@ -43,7 +42,7 @@
 
 .line {
     position: absolute;
-    left: 190px;
+    left: 185px;
     top: 121px;
     width: 140px;
     height: 1px;
@@ -69,26 +68,61 @@
 
 .circle {
     position: absolute;
-    left: 50px;
-    top: 49px;
+    left: 0;
+    top: 0;
     display: block;
     width: 142px;
     height: 142px;
     border: 1.29px solid #ffffff;
     border-radius: 50%;
+
+    transition:
+        transform 0.35s ease,
+        background 0.35s ease;
 }
 
 .play {
     position: absolute;
-    left: 88px;
-    top: 106px;
-    display: block;
-    width: 62px;
-    height: 28px;
+    left: 50%;
+    top: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 21px;
+    transform: translate(-50%, -50%);
+    transition: transform 0.35s ease;
+
+    img {
+        display: block;
+        width: 46px;
+        height: auto;
+        object-fit: contain;
+    }
 }
 
-.video:hover {
-    .image {
-        transform: scale(1.05);
+.playButton {
+    position: absolute;
+    left: 50px;
+    top: 49px;
+    width: 142px;
+    height: 142px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background: transparent;
+    cursor: pointer;
+    z-index: 2;
+    transition: background 0.35s ease;
+
+    &:hover {
+        .circle {
+            transform: scale(0.92);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .play {
+            transform: translate(-50%, -50%) scale(1.12);
+        }
     }
 }

@@ -6,7 +6,7 @@ export default function HeroBanner() {
     return (
         <div className={styles.banner}>
             <Image
-                src="/images/hero.jpg"
+                src="/images/hero.png"
                 alt="Дом Inchapin"
                 fill
                 priority

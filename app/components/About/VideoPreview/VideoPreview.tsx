@@ -1,9 +1,13 @@
 import Image from "next/image";
 import styles from "./VideoPreview.module.scss";
 
-export default function VideoPreview() {
+type VideoPreviewProps = {
+    onClick: () => void;
+};
+
+export default function VideoPreview({ onClick }: VideoPreviewProps) {
     return (
-        <button type="button" className={styles.video}>
+        <div className={styles.video}>
             <span className={styles.info}>
                 <span className={styles.label}>
                     ВИДЕО О ПРОЕКТЕ
@@ -21,21 +25,28 @@ export default function VideoPreview() {
                     src="/images/video-preview.png"
                     alt="Видео о проекте"
                     fill
+                    sizes="241px"
                     className={styles.image}
                 />
 
-                <span className={styles.circle} />
+                <button
+                    type="button"
+                    className={styles.playButton}
+                    onClick={onClick}
+                    aria-label="Смотреть видео"
+                >
+                    <span className={styles.circle} />
 
-                <span className={styles.play}>
-                    <Image
-                        src="/icons/play.svg"
-                        alt=""
-                        width={62}
-                        height={28}
-                        className={styles.playImage}
-                    />
-                </span>
+                    <span className={styles.play}>
+                        <Image
+                            src="/icons/play.svg"
+                            alt=""
+                            width={46}
+                            height={21}
+                        />
+                    </span>
+                </button>
             </span>
-        </button>
+        </div>
     );
 }
