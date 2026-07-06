@@ -13,7 +13,7 @@
     border: none;
     border-bottom: 1px solid rgba(17, 17, 17, 0.18);
     outline: none;
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 400;
     line-height: 140%;
     color: #111111;
@@ -25,7 +25,7 @@
     position: absolute;
     top: 12px;
     left: 0;
-    font-size: 12px;
+    font-size: 17px;
     font-weight: 400;
     line-height: 140%;
     text-transform: uppercase;
@@ -41,9 +41,7 @@
 .field:focus-within .placeholder,
 .filled .placeholder {
     top: -9px;
-
     font-size: 10px;
-
     color: rgba(17, 17, 17, 0.55);
 }
 
