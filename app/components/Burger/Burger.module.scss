@@ -54,3 +54,23 @@
     letter-spacing: 0.07em;
     text-transform: uppercase;
 }
+@media (max-width: 767px) {
+    .burger {
+        gap: 8px;
+    }
+
+    .icon {
+        width: 28px;
+        height: 13px;
+
+        span:nth-child(1),
+        span:nth-child(2),
+        span:nth-child(3) {
+            width: 28px;
+        }
+    }
+
+    .text {
+        font-size: 12px;
+    }
+}

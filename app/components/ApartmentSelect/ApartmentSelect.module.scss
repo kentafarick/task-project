@@ -123,3 +123,35 @@
         display: block;
     }
 }
+@media (min-width: 1024px) and (max-width: 1280px) {
+    .select {
+        width: 220px;
+    }
+
+    .select :global(.apartmentSelect__control) {
+        width: 220px;
+        height: 48px;
+        min-height: 48px;
+        padding: 0 20px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .select {
+        width: 210px;
+        font-size: 13px;
+    }
+
+    .select :global(.apartmentSelect__control) {
+        width: 210px;
+        height: 46px;
+        min-height: 46px;
+        padding: 0 18px;
+    }
+}
+
+@media (max-width: 767px) {
+    .select {
+        display: none;
+    }
+}

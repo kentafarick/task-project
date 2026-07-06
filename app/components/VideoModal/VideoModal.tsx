@@ -1,8 +1,9 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import { CSSTransition } from "react-transition-group";
-
+import { useEscape } from "../../hooks/useEscape";
+import { useLockBody } from "../../hooks/useLockBody";
 import styles from "./VideoModal.module.scss";
 
 type VideoModalProps = {
@@ -10,24 +11,14 @@ type VideoModalProps = {
     onClose: () => void;
 };
 
-export default function VideoModal({ isOpen, onClose }: VideoModalProps) {
+export default function VideoModal({
+    isOpen,
+    onClose,
+}: VideoModalProps) {
     const nodeRef = useRef<HTMLDivElement>(null);
 
-    useEffect(() => {
-        if (!isOpen) return;
-
-        const handleEsc = (event: KeyboardEvent) => {
-            if (event.key === "Escape") {
-                onClose();
-            }
-        };
-
-        document.addEventListener("keydown", handleEsc);
-
-        return () => {
-            document.removeEventListener("keydown", handleEsc);
-        };
-    }, [isOpen, onClose]);
+    useEscape(isOpen, onClose);
+    useLockBody(isOpen);
 
     return (
         <CSSTransition

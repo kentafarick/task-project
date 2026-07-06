@@ -1,11 +1,13 @@
 .content {
     position: relative;
-    width: 587px;
+    width: 100%;
+    max-width: 587px;
 }
 
 .title {
     width: max-content;
-    height: 192px;
+    max-width: 100%;
+    min-height: 192px;
     margin: 0 0 120px;
     font-size: 34px;
     font-weight: 400;
@@ -20,8 +22,9 @@
 }
 
 .text {
-    width: 587px;
-    height: 96px;
+    width: 100%;
+    max-width: 587px;
+    min-height: 96px;
     margin: 0;
     font-size: 20px;
     font-weight: 400;
@@ -41,4 +44,91 @@
     top: -64px;
     width: 40px;
     height: 6px;
+}
+
+@media (min-width: 1281px) and (max-width: 1769px) {
+    .title {
+        min-height: auto;
+        margin-bottom: clamp(80px, 6.8vw, 120px);
+        font-size: clamp(26px, 1.93vw, 34px);
+    }
+
+    .text {
+        font-size: clamp(15px, 1.14vw, 20px);
+    }
+
+    .vector {
+        top: clamp(-64px, -3.6vw, -48px);
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 1280px) {
+    .title {
+        width: 100%;
+        min-height: auto;
+        margin-bottom: 56px;
+        font-size: 22px;
+    }
+
+    .text {
+        font-size: 13px;
+    }
+
+    .vector {
+        top: -44px;
+        width: 32px;
+        height: auto;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .content {
+        max-width: 620px;
+    }
+
+    .title {
+        width: 100%;
+        min-height: auto;
+        margin-bottom: 56px;
+        font-size: 30px;
+    }
+
+    .text {
+        font-size: 17px;
+    }
+
+    .vector {
+        top: -40px;
+    }
+}
+
+@media (max-width: 767px) {
+    .content {
+        width: 100%;
+        max-width: none;
+        min-width: 0;
+    }
+
+    .title {
+        width: 100%;
+        max-width: none;
+        min-height: 0;
+        margin: 0 0 40px;
+        font-size: 18px;
+        line-height: 140%;
+        white-space: nowrap;
+    }
+
+    .text {
+        width: 100%;
+        min-height: 0;
+        font-size: 12px;
+        line-height: 155%;
+    }
+
+    .vector {
+        top: -36px;
+        width: 28px;
+        height: auto;
+    }
 }

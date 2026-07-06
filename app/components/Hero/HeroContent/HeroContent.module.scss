@@ -7,9 +7,10 @@
 .logo {
     position: absolute;
     top: 50px;
-    left: 898px;
-    width: 862px;
-    height: 137px;
+    left: 51.02%;
+    width: 48.98%;
+    max-width: 862px;
+    height: auto;
 }
 
 .text {
@@ -30,7 +31,7 @@
 .projectLabel {
     position: absolute;
     top: 349px;
-    left: 639px;
+    left: 36.3%;
     margin: 0;
     font-size: 17px;
     font-weight: 400;
@@ -38,4 +39,113 @@
     letter-spacing: 0;
     text-transform: uppercase;
     color: #2F80ED;
+}
+
+@media (min-width: 1281px) and (max-width: 1769px) {
+    .content {
+        height: 330px;
+    }
+
+    .logo {
+        top: 40px;
+    }
+
+    .text {
+        top: 90px;
+        font-size: clamp(26px, 2.15vw, 31px);
+    }
+
+    .projectLabel {
+        top: 306px;
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 1280px) {
+    .content {
+        height: 300px;
+    }
+
+    .logo {
+        top: 36px;
+    }
+
+    .text {
+        top: 82px;
+        width: 360px;
+        font-size: 24px;
+    }
+
+    .projectLabel {
+        top: 270px;
+        left: 36.3%;
+        font-size: 15px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .content {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 28px;
+    }
+
+    .logo,
+    .text,
+    .projectLabel {
+        position: static;
+    }
+
+    .logo {
+        order: 2;
+        width: 70%;
+        max-width: 560px;
+    }
+
+    .text {
+        order: 1;
+        width: 100%;
+        font-size: 26px;
+        white-space: normal;
+    }
+
+    .projectLabel {
+        order: 3;
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 767px) {
+    .content {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 22px;
+    }
+
+    .logo,
+    .text,
+    .projectLabel {
+        position: static;
+    }
+
+    .logo {
+        order: 2;
+        width: 100%;
+        max-width: 360px;
+    }
+
+    .text {
+        order: 1;
+        width: 100%;
+        font-size: 20px;
+        white-space: normal;
+    }
+
+    .projectLabel {
+        order: 3;
+        font-size: 13px;
+    }
 }

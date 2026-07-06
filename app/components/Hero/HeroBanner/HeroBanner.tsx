@@ -10,6 +10,8 @@ export default function HeroBanner() {
                 alt="Дом Inchapin"
                 fill
                 priority
+                sizes="(max-width: 1760px) 100vw, 1760px"
+                unoptimized
                 className={styles.image}
             />
         </div>

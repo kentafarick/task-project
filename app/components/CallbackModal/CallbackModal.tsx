@@ -1,9 +1,10 @@
 "use client";
 
-import { FormEvent, useEffect, useRef, useState } from "react";
+import { FormEvent, useRef, useState } from "react";
 import { CSSTransition } from "react-transition-group";
 import { IMaskInput } from "react-imask";
-
+import { useEscape } from "../../hooks/useEscape";
+import { useLockBody } from "../../hooks/useLockBody";
 import styles from "./CallbackModal.module.scss";
 
 type CallbackModalProps = {
@@ -18,21 +19,8 @@ export default function CallbackModal({ isOpen, onClose }: CallbackModalProps) {
     const [phone, setPhone] = useState("");
     const [email, setEmail] = useState("");
 
-    useEffect(() => {
-        if (!isOpen) return;
-
-        const handleEsc = (event: KeyboardEvent) => {
-            if (event.key === "Escape") {
-                onClose();
-            }
-        };
-
-        document.addEventListener("keydown", handleEsc);
-
-        return () => {
-            document.removeEventListener("keydown", handleEsc);
-        };
-    }, [isOpen, onClose]);
+    useEscape(isOpen, onClose);
+    useLockBody(isOpen);
 
     const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
