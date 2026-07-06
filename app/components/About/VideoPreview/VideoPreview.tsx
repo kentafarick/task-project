@@ -1,5 +1,6 @@
 import Image from "next/image";
 import styles from "./VideoPreview.module.scss";
+import Button from "../../ui/Button/Button";
 
 type VideoPreviewProps = {
     onClick: () => void;
@@ -29,8 +30,8 @@ export default function VideoPreview({ onClick }: VideoPreviewProps) {
                     className={styles.image}
                 />
 
-                <button
-                    type="button"
+                <Button
+                    variant="ghost"
                     className={styles.playButton}
                     onClick={onClick}
                     aria-label="Смотреть видео"
@@ -39,13 +40,13 @@ export default function VideoPreview({ onClick }: VideoPreviewProps) {
 
                     <span className={styles.play}>
                         <Image
-                            src="/icons/play.svg"
+                            src="/images/play.png"
                             alt=""
                             width={46}
                             height={21}
                         />
                     </span>
-                </button>
+                </Button>
             </span>
         </div>
     );
