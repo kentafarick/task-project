@@ -2,11 +2,12 @@
 
 import { FormEvent, useRef, useState } from "react";
 import { CSSTransition } from "react-transition-group";
-import { IMaskInput } from "react-imask";
+import PhoneInput from "../ui/PhoneInput/PhoneInput";
 import { useEscape } from "../../hooks/useEscape";
 import { useLockBody } from "../../hooks/useLockBody";
 import styles from "./FeedbackModal.module.scss";
 import Button from "../ui/Button/Button";
+import Input from "../ui/Input/Input";
 
 type CallbackModalProps = {
     isOpen: boolean;
@@ -62,44 +63,36 @@ export default function CallbackModal({ isOpen, onClose }: CallbackModalProps) {
                         Заказать звонок
                     </h2>
 
-                    <label className={`${styles.field} ${name ? styles.filled : ""}`}>
-                        <input
-                            className={styles.input}
-                            type="text"
-                            value={name}
-                            onChange={(event) => setName(event.target.value)}
-                        />
+                    <Input
+                        label="Ваше имя"
+                        type="text"
+                        value={name}
+                        filled={Boolean(name)}
+                        onChange={(event) =>
+                            setName(event.target.value)
+                        }
+                        autoComplete="name"
+                    />
 
-                        <span className={styles.placeholder}>
-                            Ваше имя
-                        </span>
-                    </label>
+                    <PhoneInput
+                        label="Телефон"
+                        value={phone}
+                        onAccept={setPhone}
+                        name="phone"
+                        autoComplete="tel"
+                        required
+                    />
 
-                    <label className={`${styles.field} ${phone ? styles.filled : ""}`}>
-                        <IMaskInput
-                            className={styles.input}
-                            mask="+7 (000) 000-00-00"
-                            value={phone}
-                            onAccept={(value) => setPhone(String(value))}
-                        />
-
-                        <span className={styles.placeholder}>
-                            Телефон
-                        </span>
-                    </label>
-
-                    <label className={`${styles.field} ${email ? styles.filled : ""}`}>
-                        <input
-                            className={styles.input}
-                            type="email"
-                            value={email}
-                            onChange={(event) => setEmail(event.target.value)}
-                        />
-
-                        <span className={styles.placeholder}>
-                            E-mail
-                        </span>
-                    </label>
+                    <Input
+                        label="E-mail"
+                        type="email"
+                        value={email}
+                        filled={Boolean(email)}
+                        onChange={(event) =>
+                            setEmail(event.target.value)
+                        }
+                        autoComplete="email"
+                    />
 
                     <p className={styles.policy}>
                         Нажимая на кнопку «Отправить», вы ознакомлены и соглашаетесь с{" "}

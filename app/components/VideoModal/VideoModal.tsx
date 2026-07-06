@@ -5,6 +5,7 @@ import { CSSTransition } from "react-transition-group";
 import { useEscape } from "../../hooks/useEscape";
 import { useLockBody } from "../../hooks/useLockBody";
 import styles from "./VideoModal.module.scss";
+import Button from "../ui/Button/Button";
 
 type VideoModalProps = {
     isOpen: boolean;
@@ -34,15 +35,15 @@ export default function VideoModal({
             }}
         >
             <div ref={nodeRef} className={styles.modal}>
-                <button
-                    type="button"
+                <Button
+                    variant="ghost"
                     className={styles.close}
                     onClick={onClose}
                     aria-label="Закрыть видео"
                 >
                     <span />
                     <span />
-                </button>
+                </Button>
 
                 <video
                     className={styles.video}
