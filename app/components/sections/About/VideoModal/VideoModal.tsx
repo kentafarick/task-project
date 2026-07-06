@@ -1,6 +1,6 @@
 "use client";
 
-import Modal from "../ui/Modal/Modal";
+import Modal from "../../../ui/Modal/Modal";
 import styles from "./VideoModal.module.scss";
 
 type VideoModalProps = {

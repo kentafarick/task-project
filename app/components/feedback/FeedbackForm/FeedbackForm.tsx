@@ -91,7 +91,7 @@ export default function FeedbackForm() {
                         className={styles.policyTooltip}
                         role="tooltip"
                     >
-                        Здесь должна быть ссылка на политику
+                        Ссылка на политику
                         обработки персональных данных
                     </span>
                 </span>

@@ -1,14 +1,15 @@
 "use client";
 
 import { useState } from "react";
-import styles from "./Header.module.scss";
+import ApartmentSelect from "../ApartmentSelect/ApartmentSelect";
+import Burger from "../Burger/Burger";
 import Container from "../Container/Container";
-import Burger from "../../Burger/Burger";
-import Logo from "../../Logo/Logo";
-import FeedbackButton from "../../feedback/FeedbackButton/FeedbackButton"
-import Phone from "../../Phone/Phone";
-import ApartmentSelect from "../../ApartmentSelect/ApartmentSelect";
+import Logo from "../Logo/Logo";
+import Phone from "../Phone/Phone";
+import FeedbackButton from "../../feedback/FeedbackButton/FeedbackButton";
 import FeedbackModal from "../../feedback/FeedbackModal/FeedbackModal";
+
+import styles from "./Header.module.scss";
 
 export default function Header() {
     const [isFeedbackOpen, setIsFeedbackOpen] = useState(false);

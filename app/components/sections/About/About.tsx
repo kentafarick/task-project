@@ -1,11 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import Container from "../layout/Container/Container";
+import Container from "../../layout/Container/Container";
 import AboutImage from "./AboutImage/AboutImage";
 import AboutContent from "./AboutContent/AboutContent";
 import VideoPreview from "./VideoPreview/VideoPreview";
-import VideoModal from "../VideoModal/VideoModal";
+import VideoModal from "./VideoModal/VideoModal";
 import styles from "./About.module.scss";
 
 export default function About() {

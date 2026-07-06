@@ -1,6 +1,6 @@
 import Image from "next/image";
 import styles from "./VideoPreview.module.scss";
-import Button from "../../ui/Button/Button";
+import Button from "../../../ui/Button/Button"
 
 type VideoPreviewProps = {
     onClick: () => void;
