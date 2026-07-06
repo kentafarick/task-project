@@ -5,7 +5,8 @@ import { CSSTransition } from "react-transition-group";
 import { IMaskInput } from "react-imask";
 import { useEscape } from "../../hooks/useEscape";
 import { useLockBody } from "../../hooks/useLockBody";
-import styles from "./CallbackModal.module.scss";
+import styles from "./FeedbackModal.module.scss";
+import Button from "../ui/Button/Button";
 
 type CallbackModalProps = {
     isOpen: boolean;
@@ -46,15 +47,15 @@ export default function CallbackModal({ isOpen, onClose }: CallbackModalProps) {
             }}
         >
             <div ref={nodeRef} className={styles.popup}>
-                <button
-                    type="button"
+                <Button
+                    variant="ghost"
                     className={styles.close}
                     onClick={onClose}
-                    aria-label="Закрыть"
+                    aria-label="Закрыть форму"
                 >
                     <span />
                     <span />
-                </button>
+                </Button>
 
                 <form className={styles.form} onSubmit={handleSubmit}>
                     <h2 className={styles.title}>

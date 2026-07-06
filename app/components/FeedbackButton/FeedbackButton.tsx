@@ -1,13 +1,16 @@
-import styles from "./CallbackButton.module.scss";
+import Button from "../ui/Button/Button";
+import styles from "./FeedbackButton.module.scss";
 
 type CallbackButtonProps = {
     onClick: () => void;
 };
 
-export default function CallbackButton({ onClick }: CallbackButtonProps) {
+export default function CallbackButton({
+    onClick,
+}: CallbackButtonProps) {
     return (
-        <button
-            type="button"
+        <Button
+            variant="ghost"
             className={styles.button}
             onClick={onClick}
         >
@@ -17,6 +20,6 @@ export default function CallbackButton({ onClick }: CallbackButtonProps) {
                     <span>Заказать звонок</span>
                 </span>
             </span>
-        </button>
+        </Button>
     );
 }

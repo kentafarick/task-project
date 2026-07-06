@@ -1,4 +1,4 @@
-import Container from "../Container/Container";
+import Container from "../layout/Container/Container";
 import HeroBanner from "./HeroBanner/HeroBanner";
 import HeroContent from "./HeroContent/HeroContent";
 import styles from "./Hero.module.scss";

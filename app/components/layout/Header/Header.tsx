@@ -3,12 +3,12 @@
 import { useState } from "react";
 import styles from "./Header.module.scss";
 import Container from "../Container/Container";
-import Burger from "../Burger/Burger";
-import Logo from "../Logo/Logo";
-import CallbackButton from "../CallbackButton/CallbackButton"
-import Phone from "../Phone/Phone";
-import ApartmentSelect from "../ApartmentSelect/ApartmentSelect";
-import CallbackModal from "../CallbackModal/CallbackModal";
+import Burger from "../../Burger/Burger";
+import Logo from "../../Logo/Logo";
+import FeedbackButton from "../../FeedbackButton/FeedbackButton"
+import Phone from "../../Phone/Phone";
+import ApartmentSelect from "../../ApartmentSelect/ApartmentSelect";
+import FeedbackModal from "../../FeedbackModal/FeedbackModal";
 
 export default function Header() {
     const [isCallbackOpen, setIsCallbackOpen] = useState(false);
@@ -33,7 +33,7 @@ export default function Header() {
                         <div className={styles.right}>
                             <Phone />
 
-                            <CallbackButton 
+                            <FeedbackButton 
                                 onClick={() => setIsCallbackOpen(true)}
                             />
                         </div>
@@ -42,7 +42,7 @@ export default function Header() {
                 </Container>
             </header>
 
-            <CallbackModal
+            <FeedbackModal
                 isOpen={isCallbackOpen}
                 onClose={() => setIsCallbackOpen(false)}
             />

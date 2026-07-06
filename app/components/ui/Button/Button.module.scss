@@ -1,0 +1,24 @@
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
+
+    &:disabled {
+        cursor: not-allowed;
+        opacity: 0.55;
+    }
+}
+
+.primary {
+    background: #2f80ed;
+    color: #ffffff;
+}
+
+.ghost {
+    background: transparent;
+}
