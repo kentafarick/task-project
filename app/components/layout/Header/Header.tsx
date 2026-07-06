@@ -5,13 +5,13 @@ import styles from "./Header.module.scss";
 import Container from "../Container/Container";
 import Burger from "../../Burger/Burger";
 import Logo from "../../Logo/Logo";
-import FeedbackButton from "../../FeedbackButton/FeedbackButton"
+import FeedbackButton from "../../feedback/FeedbackButton/FeedbackButton"
 import Phone from "../../Phone/Phone";
 import ApartmentSelect from "../../ApartmentSelect/ApartmentSelect";
-import FeedbackModal from "../../FeedbackModal/FeedbackModal";
+import FeedbackModal from "../../feedback/FeedbackModal/FeedbackModal";
 
 export default function Header() {
-    const [isCallbackOpen, setIsCallbackOpen] = useState(false);
+    const [isFeedbackOpen, setIsFeedbackOpen] = useState(false);
 
     return (
         <>
@@ -34,7 +34,7 @@ export default function Header() {
                             <Phone />
 
                             <FeedbackButton 
-                                onClick={() => setIsCallbackOpen(true)}
+                                onClick={() => setIsFeedbackOpen(true)}
                             />
                         </div>
 
@@ -43,8 +43,8 @@ export default function Header() {
             </header>
 
             <FeedbackModal
-                isOpen={isCallbackOpen}
-                onClose={() => setIsCallbackOpen(false)}
+                isOpen={isFeedbackOpen}
+                onClose={() => setIsFeedbackOpen(false)}
             />
         </>
     );

@@ -1,13 +1,13 @@
-import Button from "../ui/Button/Button";
+import Button from "../../ui/Button/Button";
 import styles from "./FeedbackButton.module.scss";
 
-type CallbackButtonProps = {
+type FeedbackButtonProps = {
     onClick: () => void;
 };
 
-export default function CallbackButton({
+export default function FeedbackButton({
     onClick,
-}: CallbackButtonProps) {
+}: FeedbackButtonProps) {
     return (
         <Button
             variant="ghost"

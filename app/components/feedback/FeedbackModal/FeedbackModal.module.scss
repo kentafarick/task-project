@@ -1,0 +1,44 @@
+.popup {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 224px;
+    background: #ffffff;
+    box-sizing: border-box;
+    z-index: 3000;
+}
+
+.close {
+    top: 56px;
+    right: 56px;
+    width: 28px;
+    height: 28px;
+
+    span {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 28px;
+        height: 1px;
+        background: #111111;
+    }
+
+    span:first-child {
+        transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    span:last-child {
+        transform: translate(-50%, -50%) rotate(-45deg);
+    }
+}
+
+@media (max-width: 767px) {
+    .popup {
+        padding: 140px 20px 40px;
+    }
+
+    .close {
+        top: 24px;
+        right: 24px;
+    }
+}
