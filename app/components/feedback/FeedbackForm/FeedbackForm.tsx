@@ -1,32 +1,45 @@
 "use client";
 
-import { type FormEvent, useState } from "react";
+import { Controller, type SubmitHandler, useForm } from "react-hook-form";
 import Button from "../../ui/Button/Button";
 import Input from "../../ui/Input/Input";
 import PhoneInput from "../../ui/PhoneInput/PhoneInput";
 import styles from "./FeedbackForm.module.scss";
 
+type FeedbackFormValues = {
+    name: string;
+    phone: string;
+    email: string;
+};
+
 export default function FeedbackForm() {
-    const [name, setName] = useState("");
-    const [phone, setPhone] = useState("");
-    const [email, setEmail] = useState("");
+    const {
+        control,
+        register,
+        handleSubmit,
+        watch,
+        formState: { isSubmitting },
+    } = useForm<FeedbackFormValues>({
+        defaultValues: {
+            name: "",
+            phone: "",
+            email: "",
+        },
+    });
 
-    const handleSubmit = (
-        event: FormEvent<HTMLFormElement>,
+    const name = watch("name");
+    const email = watch("email");
+
+    const onSubmit: SubmitHandler<FeedbackFormValues> = (
+        data,
     ) => {
-        event.preventDefault();
-
-        console.log({
-            name,
-            phone,
-            email,
-        });
+        console.log(data);
     };
 
     return (
         <form
             className={styles.form}
-            onSubmit={handleSubmit}
+            onSubmit={handleSubmit(onSubmit)}
         >
             <h2 className={styles.title}>
                 Заказать звонок
@@ -34,42 +47,40 @@ export default function FeedbackForm() {
 
             <Input
                 label="Ваше имя"
-                name="name"
                 type="text"
-                value={name}
-                filled={Boolean(name)}
                 autoComplete="name"
+                filled={Boolean(name)}
                 required
-                onChange={(event) =>
-                    setName(event.target.value)
-                }
+                {...register("name")}
             />
 
-            <PhoneInput
-                label="Телефон"
+            <Controller
                 name="phone"
-                value={phone}
-                autoComplete="tel"
-                required
-                onAccept={setPhone}
+                control={control}
+                render={({ field }) => (
+                    <PhoneInput
+                        label="Телефон"
+                        name={field.name}
+                        value={field.value}
+                        onAccept={field.onChange}
+                        autoComplete="tel"
+                        required
+                    />
+                )}
             />
 
             <Input
                 label="E-mail"
-                name="email"
                 type="email"
-                value={email}
-                filled={Boolean(email)}
                 autoComplete="email"
+                filled={Boolean(email)}
                 required
-                onChange={(event) =>
-                    setEmail(event.target.value)
-                }
+                {...register("email")}
             />
 
             <p className={styles.policy}>
-                Нажимая на кнопку «Отправить», вы ознакомлены
-                и соглашаетесь с{" "}
+                Нажимая на кнопку «Отправить», вы
+                ознакомлены и соглашаетесь с{" "}
                 <span
                     className={styles.policyLink}
                     tabIndex={0}
@@ -90,6 +101,7 @@ export default function FeedbackForm() {
                 type="submit"
                 variant="primary"
                 className={styles.submit}
+                disabled={isSubmitting}
             >
                 Отправить
             </Button>
