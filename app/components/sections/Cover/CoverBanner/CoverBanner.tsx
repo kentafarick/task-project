@@ -1,8 +1,7 @@
 import Image from "next/image";
+import styles from "./CoverBanner.module.scss";
 
-import styles from "./HeroBanner.module.scss";
-
-export default function HeroBanner() {
+export default function CoverBanner() {
     return (
         <div className={styles.banner}>
             <Image

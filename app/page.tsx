@@ -1,12 +1,12 @@
 import Header from "./components/layout/Header/Header";
 import About from "./components/sections/About/About";
-import Hero from "./components/sections/Hero/Hero";
+import Cover from "./components/sections/Cover/Cover";
 
 export default function Home() {
     return (
         <>
             <Header />
-            <Hero />
+            <Cover />
             <About />
         </>
     );

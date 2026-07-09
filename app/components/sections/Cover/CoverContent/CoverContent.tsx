@@ -1,8 +1,7 @@
 import Image from "next/image";
+import styles from "./CoverContent.module.scss";
 
-import styles from "./HeroContent.module.scss";
-
-export default function HeroContent() {
+export default function CoverContent() {
     return (
         <div className={styles.content}>
             <p className={styles.text}>
